@@ -75,6 +75,7 @@ propriétaire de /home/charlie et /home/dave
 - infra pour charlie et dave
           
    Groupe dev :
+   
           sudo usermod alice -g dev
           sudo usermod bob -g dev
           
