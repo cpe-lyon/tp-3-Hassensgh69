@@ -103,12 +103,15 @@ ou supprimer ce fichier ?
           
  9.  Pouvez-vous ouvrir une session en tant que alice ? Pourquoi ? 
   
+  
   On ne peut pas ouvrir une session avec son compte car son compte n'est pas activé.
+  
+  
   
  10.   Activez le compte de l’utilisateur alice et vérifiez que vous pouvez désormais vous connecter avec son
 compte.
 
-          sudo passwd alice
+                    sudo passwd alice
           
   On peut maintenant se connecter avec le compte d'alice        
 
