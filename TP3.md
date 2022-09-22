@@ -85,3 +85,31 @@ propriétaire de /home/charlie et /home/dave
           sudo usermod dave -g infra
           
           
+  7. Créez deux répertoires /home/dev et /home/infra pour le contenu commun aux membres de chaque
+groupe, et mettez en place les permissions leur permettant d’écrire dans ces dossiers:
+
+
+          sudo mkdir /home/dev
+          
+          sudo mkdir /home/infra
+          
+  8. Comment faire pour que, dans ces dossiers, seul le propriétaire d’un fichier ait le droit de renommer
+ou supprimer ce fichier ? 
+
+          
+          sudo chmod 700 " repertoire "
+          
+          
+          
+  9. Pouvez-vous ouvrir une session en tant que alice ? Pourquoi ? 
+  
+  On ne peut pas ouvrir une session avec son compte car son compte n'est pas activé.
+  
+  10. Activez le compte de l’utilisateur alice et vérifiez que vous pouvez désormais vous connecter avec son
+compte.
+
+          sudo passwd alice
+          
+  On peut maintenant se connecter avec le compte d'alice        
+
+          
