@@ -31,14 +31,21 @@ création de leur dossier personnel et avec bash pour shell
           sudo usermod --shell /bin/bash charlie
           sudo grep charlie /etc/passwd     
    
-     Utilisateur dav :
+     Utilisateur dave :
           
-          sudo useradd -m dav
-          sudo usermod --shell /bin/bash dav
-          sudo grep dav /etc/passwd      
+          sudo useradd -m dave
+          sudo usermod --shell /bin/bash dave
+          sudo grep dave /etc/passwd      
           
     3. Ajoutez les utilisateurs dans les groupes créés :
+    
     
           usermod -a -G dev alice
           usermod -a -G dev bob 
           usermod -a -G dev dave
+          
+          
+          usermod -a -G dev bob
+          usermod -a -G dev charlie 
+          usermod -a -G dev dave
+          
