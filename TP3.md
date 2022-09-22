@@ -111,8 +111,56 @@ ou supprimer ce fichier ?
  10.   Activez le compte de l’utilisateur alice et vérifiez que vous pouvez désormais vous connecter avec son
 compte.
 
-                    sudo passwd alice
+             sudo passwd alice
           
   On peut maintenant se connecter avec le compte d'alice        
 
           
+ 11. Comment obtenir l’uid et le gid de alice ?
+
+          id alice
+ 
+ 12. Quelle commande permet de retrouver l’utilisateur dont l’uid est 1003 ?
+
+          id 1003
+          
+
+13. Quel est l’id du groupe dev ?
+         
+         grep dev /etc/group
+         dev:x:1002:alice,bob,dave
+         
+14. Quel groupe a pour gid 1002 ? 
+    
+    C'est le groupe dev
+    
+15. Retirez l’utilisateur charlie du groupe infra. Que se passe-t-il ? Expliquez.
+
+          sudo gpasswd --delete charlie infra
+     
+     Apres avoir fait ca l'utilisateur charlie est definitivement supprimer
+     
+ 16. Modifiez le compte de dave de sorte que :
+ 
+ il expire au 1er juin 2021 : 
+ 
+          chage -e 2021-06-01 dave
+ 
+ il faut changer de mot de passe avant 90 jours :
+ 
+          chage -M 90 dave
+ 
+ il faut attendre 5 jours pour modifier un mot de passe :
+
+          chage -m 5 dave
+
+ l’utilisateur est averti 14 jours avant l’expiration de son mot de passe :
+
+          chage -W 14 dave
+
+ le compte sera bloqué 30 jours après expiration du mot de passe : 
+                    
+           chage -I 30 dave              
+           
+ 
+17. Quel est l’interpréteur de commandes (Shell) de l’utilisateur root ?
