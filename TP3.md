@@ -217,6 +217,51 @@ On ne peut plus lister le contenu du fichier car nous nous sommes enlever les dr
 En enlevant le droit en ecriture l'user ne peut plus modifie le fichier nouveau ainsi seul root pourra le faire, il faut ainsi obligatoirement le droit en ecriture pour l'user afin qu'il puisse modifier un fichier dans un reperoire.
 
 
-7. 
+7. Positionnez vous dans votre répertoire personnel, puis retirez le droit en exécution du répertoire test.
+Tentez de créer, supprimer, ou modifier un fichier dans le répertoire test, de vous y déplacer, d’en
+lister le contenu, etc…Qu’en déduisez vous quant au sens du droit en exécution pour les répertoires ?
+
+On peut en conclure que sans les droits d'execution on ne peut rien manipuler sur un dossier.
 
 
+8. Rétablissez le droit en exécution du répertoire test. Positionnez vous dans ce répertoire et retirez lui
+à nouveau le droit d’exécution. Essayez de créer, supprimer et modifier un fichier dans le répertoire
+test, de vous déplacer dans ssrep, de lister son contenu. Qu’en concluez-vous quant à l’influence des
+droits que l’on possède sur le répertoire courant ? Peut-on retourner dans le répertoire parent avec ”cd
+..” ? Pouvez-vous donner une explication ?
+
+Les droits d'un fichier sont separés de ceux d'un dossier c'est a dire que les droits d'xecution d'un dossier n'influent pas sur ceux des fichiers qu'ils contient.
+
+9. Rétablissez le droit en exécution du répertoire test. Attribuez au fichier fichier les droits suffisants
+pour qu’une autre personne de votre groupe puisse y accéder en lecture, mais pas en écriture.
+
+          chmod 740 fichier
+          
+10. Définissez un umask très restrictif qui interdit à quiconque à part vous l’accès en lecture ou en écriture,
+ainsi que la traversée de vos répertoires. Testez sur un nouveau fichier et un nouveau répertoire.
+
+![image](https://user-images.githubusercontent.com/80455696/191808371-77a6d17f-f13f-4d61-a66b-35f1759b9ec8.png)
+
+11.Définissez un umask très permissif qui autorise tout le monde à lire vos fichiers et traverser vos répertoires, mais n’autorise que vous à écrire. Testez sur un nouveau fichier et un nouveau répertoire.
+
+![image](https://user-images.githubusercontent.com/80455696/191808874-83a24cee-b9d8-4f1c-bc09-3357da0a30cd.png)
+
+12. Définissez un umask équilibré qui vous autorise un accès complet et autorise un accès en lecture aux
+membres de votre groupe. Testez sur un nouveau fichier et un nouveau répertoire.
+
+ ![image](https://user-images.githubusercontent.com/80455696/191809303-4fc7f8de-0d40-4433-bc54-7ea068b8199f.png)
+                  
+13. Transcrivez les commandes suivantes de la notation classique à la notation octale ou vice-versa (vous
+pourrez vous aider de la commande stat pour valider vos réponses) :
+
+- chmod 534 fic
+- chmod 602 fic
+- chmod rw-r-x--wx fic
+- chmod 520 fic
+
+14. Affichez les droits sur le programme passwd. Que remarquez-vous ? En affichant les droits du fichier
+/etc/passwd, pouvez-vous justifier les permissions sur le programme passwd ?
+
+          ls -l /etc/passwd 
+
+On peut voir que seul root peut executer ce fichier car ce fichier contient des informations sensible très restreintes.
