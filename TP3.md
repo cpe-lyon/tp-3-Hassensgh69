@@ -37,9 +37,11 @@ création de leur dossier personnel et avec bash pour shell
           sudo usermod --shell /bin/bash dave
           sudo grep dave /etc/passwd      
           
-    3. Ajoutez les utilisateurs dans les groupes créés :
+    
+  3. Ajoutez les utilisateurs dans les groupes créés :
     
     
+
           usermod -a -G dev alice
           usermod -a -G dev bob 
           usermod -a -G dev dave
@@ -48,4 +50,14 @@ création de leur dossier personnel et avec bash pour shell
           usermod -a -G dev bob
           usermod -a -G dev charlie 
           usermod -a -G dev dave
+          
+          
+          
+          
+    4. Donnez deux moyens d’afficher les membres de infra
+
+    
+          grep infra /etc/group
+          
+          getent group dinfra
           
