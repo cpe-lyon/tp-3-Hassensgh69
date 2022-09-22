@@ -214,6 +214,9 @@ On ne peut plus lister le contenu du fichier car nous nous sommes enlever les dr
 
 6. Créez dans test un fichier nouveau ainsi qu’un répertoire sstest. Retirez au fichier nouveau et au répertoire test le droit en écriture. Tentez de modifier le fichier nouveau. Rétablissez ensuite le droiten écriture au répertoire test. Tentez de modifier le fichier nouveau, puis de le supprimer. Que pouvezvous déduire de toutes ces manipulations ?
 
+En enlevant le droit en ecriture l'user ne peut plus modifie le fichier nouveau ainsi seul root pourra le faire, il faut ainsi obligatoirement le droit en ecriture pour l'user afin qu'il puisse modifier un fichier dans un reperoire.
 
+
+7. 
 
 
