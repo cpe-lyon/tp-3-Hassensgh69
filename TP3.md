@@ -164,3 +164,8 @@ compte.
            
  
 17. Quel est l’interpréteur de commandes (Shell) de l’utilisateur root ?
+
+
+18. Si vous regardez la liste des comptes présents sur la machine, vous verrez qu’il en existe un nommé
+nobody. A quoi correspond-il ?
+
