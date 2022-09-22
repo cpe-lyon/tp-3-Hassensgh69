@@ -186,5 +186,34 @@ La commande suivante permet de forcer sudo a oublier notre mote de passe :
           sudo -k
           
           
-          
+## Exercice 2. Gestion des permissions  
+
+1. Dans votre $HOME, créez un dossier test, et dans ce dossier un fichier fichier contenant quelques lignes de texte. Quels sont les droits sur test et fichier ?
+
+![image](https://user-images.githubusercontent.com/80455696/191705801-d84f532d-847d-4901-a0eb-a433f6aef6e3.png)
+
+2. Retirez tous les droits sur ce fichier (même pour vous), puis essayez de le modifier et de l’afficher en tant que root. Conclusion ?
+
+L'utilisateur root peut toujours tout faire car il aura tout le temps tout les droits.
+
+![image](https://user-images.githubusercontent.com/80455696/191706392-c184920f-c170-45aa-9bf4-c9135d7b779e.png)
+
+3. Redonnez vous les droits en écriture et exécution sur fichier puis exécutez la commande echo "echo Hello" > fichier. On a vu lors des TP précédents que cette commande remplace le contenu d’unfichier s’il existe déjà. Que peut-on dire au sujet des droits ?
+
+![image](https://user-images.githubusercontent.com/80455696/191706941-7206a126-8703-4c6e-bf01-9b3c86e21089.png)
+
+On peut modifier le fichier sans avoir besoinde l'utilisateur ROOT.
+
+4. Essayez d’exécuter le fichier. Est-ce que cela fonctionne ? Et avec sudo ? Expliquez.
+
+Oui on peut executer le fichier avec ou sans root car on lui adonner tout les droits avec la commande chmod 777 fichier
+
+5. Placez-vous dans le répertoire test, et retirez-vous le droit en lecture pour ce répertoire. Listez le contenu du répertoire, puis exécutez ou affichez le contenu du fichier fichier. Qu’en déduisez-vous ?Rétablissez le droit en lecture sur test.
+
+On ne peut plus lister le contenu du fichier car nous nous sommes enlever les droits.
+
+6. Créez dans test un fichier nouveau ainsi qu’un répertoire sstest. Retirez au fichier nouveau et au répertoire test le droit en écriture. Tentez de modifier le fichier nouveau. Rétablissez ensuite le droiten écriture au répertoire test. Tentez de modifier le fichier nouveau, puis de le supprimer. Que pouvezvous déduire de toutes ces manipulations ?
+
+
+
 
