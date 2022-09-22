@@ -165,7 +165,26 @@ compte.
  
 17. Quel est l’interpréteur de commandes (Shell) de l’utilisateur root ?
 
+        
 
 18. Si vous regardez la liste des comptes présents sur la machine, vous verrez qu’il en existe un nommé
 nobody. A quoi correspond-il ?
+
+Nobody est le nom conventionnel d'un compte d'utilisateur à qui aucun fichier n'appartient, qui n'est dans aucun groupe qui a des privilèges et dont les seules possibilités sont celles que tous les "autres utilisateurs" ont.
+
+          grep nobody /etc/passwd
+          nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+          
+          
+ 19. Par défaut, combien de temps la commande sudo conserve-t-elle votre mot de passe en mémoire ?
+Quelle commande permet de forcer sudo à oublier votre mot de passe ? 
+
+La coommande sudo conserve en memoire notre mot de passe pendant 15 minutes
+
+La commande suivante permet de forcer sudo a oublier notre mote de passe :
+          
+          sudo -k
+          
+          
+          
 
