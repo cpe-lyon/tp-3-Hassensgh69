@@ -62,3 +62,25 @@ création de leur dossier personnel et avec bash pour shell
           
           getent group dinfra
           
+  5. Faites de dev le groupe propriétaire des répertoires /home/alice et /home/bob et de infra le groupe
+propriétaire de /home/charlie et /home/dave
+
+           sudo chgrp -R dev /home/alice
+           sudo chgrp -R dev /home/charlie
+           sudo chgrp -R dev /home/dave
+           
+           
+  6. Remplacez le groupe primaire des utilisateurs :
+- dev pour alice et bob
+- infra pour charlie et dave
+          
+   Groupe dev :
+          sudo usermod alice -g dev
+          sudo usermod bob -g dev
+          
+   Groupe infra:
+   
+          sudo usermod charlie -g infra
+          sudo usermod dave -g infra
+          
+          
