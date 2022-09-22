@@ -54,9 +54,10 @@ création de leur dossier personnel et avec bash pour shell
           
           
           
-    4. Donnez deux moyens d’afficher les membres de infra
+   4. Donnez deux moyens d’afficher les membres de infra
 
     
+          
           grep infra /etc/group
           
           getent group dinfra
