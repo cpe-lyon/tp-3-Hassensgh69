@@ -40,35 +40,32 @@ création de leur dossier personnel et avec bash pour shell
     
   3. Ajoutez les utilisateurs dans les groupes créés :
     
-    
+    GROUPE DEV :
 
           usermod -a -G dev alice
           usermod -a -G dev bob 
           usermod -a -G dev dave
           
-          
-          usermod -a -G dev bob
-          usermod -a -G dev charlie 
-          usermod -a -G dev dave
-          
-          
-          
+    GROUPE INFRA :
+    
+          usermod -a -G infra bob
+          usermod -a -G infra charlie 
+          usermod -a -G infra dave
+                 
           
    4. Donnez deux moyens d’afficher les membres de infra
 
     
-          
           grep infra /etc/group
-          
           getent group dinfra
           
   5. Faites de dev le groupe propriétaire des répertoires /home/alice et /home/bob et de infra le groupe
 propriétaire de /home/charlie et /home/dave
 
            sudo chgrp -R dev /home/alice
-           sudo chgrp -R dev /home/charlie
-           sudo chgrp -R dev /home/dave
-           
+           sudo chgrp -R dev /home/bob
+           sudo chgrp -R infra /home/charlie
+           sudo chgrp -R infra /home/dave
            
   6. Remplacez le groupe primaire des utilisateurs :
 - dev pour alice et bob
@@ -90,9 +87,13 @@ groupe, et mettez en place les permissions leur permettant d’écrire dans ces 
 
 
           sudo mkdir /home/dev
-          
           sudo mkdir /home/infra
           
+          sudo chgrp -R infra /home/infra
+          sudo chgrp -R dev /home/dev
+          sudo chmod g+w /home/infra
+          sudo chmod g+w /home/dev
+
 8.  Comment faire pour que, dans ces dossiers, seul le propriétaire d’un fichier ait le droit de renommer
 ou supprimer ce fichier ? 
 
